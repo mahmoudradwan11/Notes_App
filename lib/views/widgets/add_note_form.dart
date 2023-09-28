@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:notes/cubits/add_note_cubit/add_notes_cubit.dart';
 import 'package:notes/cubits/add_note_cubit/add_notes_states.dart';
+import 'package:notes/cubits/note_cubit/notes_cubit.dart';
 import 'package:notes/models/note_model.dart';
 import 'package:notes/views/widgets/custom_botton.dart';
 import 'package:notes/views/widgets/custom_text_feild.dart';
@@ -44,6 +45,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     date: DateFormat('KK:mm dd / MM / yyyy').format(DateTime.now()).toString(),
                     color: Colors.yellow.value);
                 cubit.addNote(note);
+                //GetNotesCubit.get(context).fetchAllNote();
               }
               else{
                 autoValidateMode  = AutovalidateMode.always;

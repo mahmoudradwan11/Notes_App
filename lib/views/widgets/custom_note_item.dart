@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes/cubits/note_cubit/notes_cubit.dart';
 import 'package:notes/models/note_model.dart';
 import 'package:notes/views/edit_view.dart';
 
@@ -39,6 +40,7 @@ class CustomNoteItem extends StatelessWidget {
                 trailing: IconButton(
                   onPressed: () {
                     note.delete();
+                    GetNotesCubit.get(context).fetchAllNote();
                   },
                   icon: const Icon(
                     FontAwesomeIcons.trash,
