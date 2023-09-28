@@ -7,18 +7,18 @@ class NotesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return  SingleChildScrollView(
       child: Padding(
-        padding:  EdgeInsets.symmetric(
+        padding:  const EdgeInsets.symmetric(
           horizontal: 24,
         ),
         child: Column(
           children: [
             Padding(
-              padding:  EdgeInsets.only(top: 40, left: 10, right: 10),
-              child: CustomAppBar(appBarText: 'Notes', icon: Icons.search),
+              padding: const EdgeInsets.only(top: 40, left: 10, right: 10),
+              child: CustomAppBar(appBarText: 'Notes', icon: Icons.search,onPressed:(){},),
             ),
-             NotesListView(),
+             const NotesListView(),
           ],
         ),
       ),
