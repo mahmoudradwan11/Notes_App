@@ -10,12 +10,14 @@ class NotesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24,),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 24,
+        ),
         child: Column(
-          children:[
+          children: [
             Padding(
-              padding: const EdgeInsets.only(top: 40,left: 10,right: 10),
-              child: CustomAppBar(appBarText: 'Notes',),
+              padding: const EdgeInsets.only(top: 40, left: 10, right: 10),
+              child: CustomAppBar(appBarText: 'Notes', icon: Icons.search),
             ),
             const NotesListView(),
           ],
