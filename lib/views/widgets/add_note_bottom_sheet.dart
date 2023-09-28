@@ -12,9 +12,6 @@ class AddNoteBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return  BlocConsumer<AddNotesCubit,NotesStates>(
       listener:(context,state){
-        if(state is ErrorAddNotes){
-          print(state.error);
-        }
         if(state is AddNoteState){
           GetNotesCubit.get(context).fetchAllNote();
           Navigator.pop(context);
@@ -32,4 +29,5 @@ class AddNoteBottomSheet extends StatelessWidget {
     );
   }
 }
+
 

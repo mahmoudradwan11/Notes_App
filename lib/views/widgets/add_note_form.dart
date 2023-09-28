@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:notes/cubits/add_note_cubit/add_notes_cubit.dart';
 import 'package:notes/cubits/add_note_cubit/add_notes_states.dart';
-import 'package:notes/cubits/note_cubit/notes_cubit.dart';
 import 'package:notes/models/note_model.dart';
+import 'package:notes/views/widgets/colors_list_view.dart';
 import 'package:notes/views/widgets/custom_botton.dart';
 import 'package:notes/views/widgets/custom_text_feild.dart';
 
@@ -32,6 +32,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
           CustomTextFiled(hintText: 'Content',maxLines: 5,onSaved:(value){
             subTitle = value;
           },),
+          const SizedBox(height: 20,),
+          const ColorsListView(),
           const SizedBox(height: 50,),
           BlocBuilder<AddNotesCubit,NotesStates>(
             builder:(context,state)=> CustomButton(
