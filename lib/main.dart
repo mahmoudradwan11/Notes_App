@@ -12,7 +12,6 @@ void main()async{
   ));
   runApp(const NotesApp());
 }
-
 class NotesApp extends StatelessWidget {
   const NotesApp({Key? key}) : super(key: key);
 
