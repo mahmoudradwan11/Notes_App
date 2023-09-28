@@ -4,13 +4,13 @@ import 'package:notes/models/note_model.dart';
 import 'notes_states.dart';
 class GetNotesCubit extends Cubit<GetNotesStates> {
   GetNotesCubit() : super(GetNotesInitState());
+
   static GetNotesCubit get(context) => BlocProvider.of(context);
-  fetchAllNote()async{
-    try{
-      var noteBox =Hive.box<NoteModel>('notes_box');
-      emit(GetNoteState(noteBox.values.toList()));
-    }catch(e){
-      emit(ErrorGetNotes(e.toString()));
-    }
+  List<NoteModel>?notes;
+  fetchAllNote() async {
+    var noteBox = Hive.box<NoteModel>('notes_box');
+    notes = noteBox.values.toList();
+    emit(GetNoteState(notes!));
+    print(notes!.length);
   }
 }

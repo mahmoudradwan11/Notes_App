@@ -7,8 +7,3 @@ class GetNoteState extends GetNotesStates{
   final List<NoteModel> notes;
   GetNoteState(this.notes);
 }
-class ErrorGetNotes extends GetNotesStates
-{
-  final String error;
-  ErrorGetNotes(this.error);
-}
